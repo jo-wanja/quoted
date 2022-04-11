@@ -14,7 +14,8 @@ import { QuoteDetsComponent } from './quote-dets/quote-dets.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
