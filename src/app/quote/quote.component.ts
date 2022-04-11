@@ -8,11 +8,13 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   dispQuotes:Quote[]=[
-    {quote:'happy are the meek',author:'Jesus',submitter:'wanja',upvote:0,downvote:0},
-    {quote:'happy are the meek',author:'Jesus',submitter:'wanja',upvote:0,downvote:0},
-    {quote:'happy are the meek',author:'Jesus',submitter:'wanja',upvote:0,downvote:0},
-    {quote:'happy are the meek',author:'Jesus',submitter:'wanja',upvote:0,downvote:0},
+    new Quote ('happy are the meek','Jesus','wanja',0,0),
+    new Quote ('happy are the meek','Jesus','wanja',0,0),
+    new Quote ('happy are the meek','Jesus','wanja',0,0),
+    new Quote ('happy are the meek','Jesus','wanja',0,0),
   ]
+
+  
 
   constructor() { }
 

@@ -1,8 +1,32 @@
 export class Quote {
-  quote!:string;
-  author!:string;
-  submitter!:string;
-  upvote!:number;
-  downvote!:number;
+    like: boolean
+    dislike: boolean
+   
+constructor(
+  public quote:string,
+  public author:string,
+  public submitter:string,
+  public upvote:number,
+  public downvote:number){
+this.like =false;
+
+this.dislike = false;
+
+}
+likeCount (){
+  if (this.like){
+    console.log('clicked')
+    return this.upvote +=1
+  }
+  return this.upvote -=1
+}
+
+dislikeCount(){
+  if (this.dislike){
+    console.log('clicked')
+    return this.downvote +=1
+  }
+  return this.downvote -=1
+}
 
 }
