@@ -14,7 +14,10 @@ export class QuoteComponent implements OnInit {
     new Quote ('happy are the meek','Jesus','wanja',0,0),
   ]
 
-  
+  addQuote(quote:Quote){
+    this.dispQuotes.push(quote)
+
+}
 
   constructor() { }
 
