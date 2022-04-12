@@ -15,18 +15,18 @@ this.dislike = false;
 }
 likeCount (){
   if (this.like){
-    console.log('clicked')
+    
     return this.upvote +=1
   }
-  return this.upvote -=1
+  return 
 }
 
 dislikeCount(){
   if (this.dislike){
-    console.log('clicked')
+    
     return this.downvote +=1
   }
-  return this.downvote -=1
+  return 
 }
 
 }

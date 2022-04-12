@@ -10,13 +10,13 @@ export class QuoteDetsComponent implements OnInit {
   @Input() quotedets!: Quote;
 
   toggleLike(){
-    this.quotedets.like= !this.quotedets.like
+    this.quotedets.like= true;
      this.quotedets.likeCount()
-    console.log('clicked')
+    
   }
   
   toggleDislike(){
-    this.quotedets.dislike= !this.quotedets.dislike
+    this.quotedets.dislike= true;
      this.quotedets.dislikeCount()
 
   }

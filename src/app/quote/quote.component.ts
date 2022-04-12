@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
+import { HighlightDirective } from '../highlight.directive';
+
+
 
 @Component({
   selector: 'app-quote',
@@ -22,6 +25,11 @@ export class QuoteComponent implements OnInit {
 showDets(){
  this.show=!this.show
 }
+
+highest = Math.max.apply(Math, this.dispQuotes.map(function(o) { 
+  return o.upvote; }));
+ 
+ 
 
   constructor() { }
 
