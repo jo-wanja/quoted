@@ -8,15 +8,19 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   dispQuotes:Quote[]=[
-    new Quote ('happy are the meek','Jesus','wanja',0,0),
+    new Quote ('happy are the meek','Jesu','wanja',0,0),
     new Quote ('happy are the meek','Jesus','wanja',0,0),
     new Quote ('happy are the meek','Jesus','wanja',0,0),
     new Quote ('happy are the meek','Jesus','wanja',0,0),
   ]
 
   addQuote(quote:Quote){
-    this.dispQuotes.push(quote)
+    this.dispQuotes.push(quote);
 
+}
+ show:boolean=true
+showDets(){
+ this.show=!this.show
 }
 
   constructor() { }

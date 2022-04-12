@@ -9,7 +9,9 @@
           <p>{{dispQuote.quote}}</p>
           <footer class="blockquote-footer">{{dispQuote.author}}</footer>
         </blockquote>
-        <app-quote-dets [quotedets]="dispQuote"></app-quote-dets>
+        <span (click)="showDets()">more
+          <app-quote-dets  [hidden]=(show) [quotedets]="dispQuote"></app-quote-dets>
+        </span>
       </div>
     </div>
   </div>
