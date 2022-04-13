@@ -9,9 +9,9 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   dispQuotes:Quote[]=[
-    new Quote ('happy are the meek','Jesu','wanja',0,0,new Date(2022,4,14)),
-    new Quote ('happy are the meek','Jesus','wanja',0,0,new Date(2022,4,14)),
-    new Quote ('happy are the meek','Jesus','wanja',0,0,new Date(2022,4,13)),
+    new Quote ('Never memorize something that you can look up.','Albert Einstein','wanja',0,0,new Date(2022,4,14)),
+    new Quote ('An expert is a person who has made all the mistakes that can be made in a very narrow field.','Niels Bohr','wanja',0,0,new Date(2022,4,14)),
+    new Quote ('In the beginning there was nothing, which exploded.','Terry Prachett','wanja',0,0,new Date(2022,4,13)),
     new Quote ('happy are the meek','Jesus','wanja',0,0,new Date(2022,4,14)),
   ]
 

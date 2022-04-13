@@ -1,4 +1,12 @@
+<html>
+<body>
 <div class="container">
+  <span class="center">
+  <h1>Welcome To Quoted</h1>
+<p>A space that you can fill with quotes that move you</p>
+</span>
+<div class="row">
+  <div class="col-md-6">
  <div *ngFor="let dispQuote of dispQuotes let i=index" >
    <div *ngIf="dispQuote.upvote===1; then mostLiked else notsoLiked "></div>
     <ng-template #mostLiked >
@@ -13,7 +21,7 @@
           <p appHighlight>{{dispQuote.quote}}</p>
           <footer class="blockquote-footer">{{dispQuote.author}}</footer>
         </blockquote>
-        <span (click)="showDets(i)">more</span>
+        <span (click)="showDets(i)" class="highlight">more</span>
         <app-quote-dets *ngIf="dispQuote.showdets" [quotedets]="dispQuote" (delete)='deleteQ($event,i)'></app-quote-dets>
         
       </div>
@@ -31,7 +39,7 @@
           <p>{{dispQuote.quote}}</p>
           <footer class="blockquote-footer">{{dispQuote.author}}</footer>
         </blockquote>
-        <span (click)="showDets(i)">more</span>
+        <span (click)="showDets(i)" class="highlight">more</span>
           <app-quote-dets *ngIf="dispQuote.showdets" [quotedets]="dispQuote"  (delete)='deleteQ($event,i)'></app-quote-dets>
         
       </div>
@@ -40,5 +48,11 @@
 </ng-template>
   
   </div>
+  </div>
+  <div class="col-md-4">
   <app-quote-form (nwQuote)="addQuote($event)"></app-quote-form>
 </div>
+</div>
+</div>
+</body>
+</html>

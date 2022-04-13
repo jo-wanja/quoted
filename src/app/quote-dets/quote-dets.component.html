@@ -1,14 +1,16 @@
-<button (click)="toggleDislike()">
+
+<br><hr>
+<button (click)="toggleDislike()" class="btn">
  {{quotedets.downvote }}
   <img src="/assets/dislike.png" width="24px" height="24px">
   
 </button>
 
-<button (click)="toggleLike()">
+<button (click)="toggleLike()"class="btn">
   {{quotedets.upvote}}
   <img src="/assets/thumbs-up.png"  width="24px" height="24px">
 </button>
 
-<button (click)="quoteDelete(true)">delete</button>
+<button (click)="quoteDelete(true)"class="btn">delete</button>
 
 <p>created {{quotedets.time|timeCount}} days ago </p>

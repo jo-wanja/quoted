@@ -1,0 +1,28 @@
+html{
+  height: 100%;
+ 
+}
+
+body{
+  background-image:url(src/assets/frame-g8490f7f41_1920.jpg);
+  
+  min-height: 100vh; 
+}
+
+.highlight{
+  color: rgb(197, 49, 5);
+}
+
+.center p,h1{
+  text-align: center;
+  
+}
+.center p{
+  color:black;
+  font-size: x-large;
+}
+
+.center h1{
+  color: rgb(197, 49, 5);
+}
+
