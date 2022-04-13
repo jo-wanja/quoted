@@ -8,10 +8,12 @@ import { Quote } from '../quote';
 })
 export class QuoteDetsComponent implements OnInit {
   @Input() quotedets!: Quote;
-  
+  @Output()delete =new EventEmitter<boolean>()
 
 
-  
+  quoteDelete(boo:boolean){
+    this.delete.emit(boo)
+  }
 
   toggleLike(){
     

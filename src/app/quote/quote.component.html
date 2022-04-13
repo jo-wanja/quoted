@@ -1,5 +1,5 @@
 <div class="container">
- <div *ngFor="let dispQuote of dispQuotes">
+ <div *ngFor="let dispQuote of dispQuotes let i=index" >
    <div *ngIf="dispQuote.upvote===1; then mostLiked else notsoLiked "></div>
     <ng-template #mostLiked >
      
@@ -13,29 +13,30 @@
           <p appHighlight>{{dispQuote.quote}}</p>
           <footer class="blockquote-footer">{{dispQuote.author}}</footer>
         </blockquote>
-        <span (click)="showDets()">more</span>
-          <app-quote-dets  [hidden]=(show) [quotedets]="dispQuote"></app-quote-dets>
+        <span (click)="showDets(i)">more</span>
+        <app-quote-dets *ngIf="dispQuote.showdets" [quotedets]="dispQuote" (delete)='deleteQ($event,i)'></app-quote-dets>
         
       </div>
     </div>
   </span>
   </ng-template>
-  <ng-template #notsoLiked >
-    
-  <div class="card" >
-    <div class="card-header">
-      Quote submitted by {{dispQuote.submitter}}
+<ng-template #notsoLiked >
+  <span>
+    <div class="card" >
+      <div class="card-header">
+        Quote submitted by {{dispQuote.submitter}}
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>{{dispQuote.quote}}</p>
+          <footer class="blockquote-footer">{{dispQuote.author}}</footer>
+        </blockquote>
+        <span (click)="showDets(i)">more</span>
+          <app-quote-dets *ngIf="dispQuote.showdets" [quotedets]="dispQuote"  (delete)='deleteQ($event,i)'></app-quote-dets>
+        
+      </div>
     </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>{{dispQuote.quote}}</p>
-        <footer class="blockquote-footer">{{dispQuote.author}}</footer>
-      </blockquote>
-      <span (click)="showDets()">more</span>
-        <app-quote-dets  [hidden]=(show) [quotedets]="dispQuote"></app-quote-dets>
-      
-    </div>
-  </div>
+  </span>
 </ng-template>
   
   </div>

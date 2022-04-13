@@ -1,8 +1,5 @@
 import { Component, Directive, OnInit, TemplateRef } from '@angular/core';
 import { Quote } from '../quote';
-import { HighlightDirective } from '../highlight.directive';
-import { TemplateLiteral, TemplateLiteralElement } from '@angular/compiler';
-
 
 
 @Component({
@@ -12,10 +9,10 @@ import { TemplateLiteral, TemplateLiteralElement } from '@angular/compiler';
 })
 export class QuoteComponent implements OnInit {
   dispQuotes:Quote[]=[
-    new Quote ('happy are the meek','Jesu','wanja',0,0),
-    new Quote ('happy are the meek','Jesus','wanja',0,0),
-    new Quote ('happy are the meek','Jesus','wanja',0,0),
-    new Quote ('happy are the meek','Jesus','wanja',0,0),
+    new Quote ('happy are the meek','Jesu','wanja',0,0,new Date(2022,4,14)),
+    new Quote ('happy are the meek','Jesus','wanja',0,0,new Date(2022,4,14)),
+    new Quote ('happy are the meek','Jesus','wanja',0,0,new Date(2022,4,13)),
+    new Quote ('happy are the meek','Jesus','wanja',0,0,new Date(2022,4,14)),
   ]
 
   addQuote(quote:Quote){
@@ -23,15 +20,25 @@ export class QuoteComponent implements OnInit {
 
 }
  show:boolean=true
-showDets(){
- this.show=!this.show
+showDets(i:number){
+ this.dispQuotes[i].showdets=!this.dispQuotes[i].showdets
 }
 
 
+deleteQ(boo:boolean,i:number){
+
+  if(boo){
+    let toDelete = confirm(`Are you sure you want to delete this Quote?`)
+
+    if(toDelete){
+      this.dispQuotes.splice(i,1)
+    }
+  }
+}
 
 
-
-
+down!:any
+meh!:any
  mostLiked!:any
  notsoLiked!:any
 
