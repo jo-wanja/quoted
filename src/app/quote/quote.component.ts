@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Directive, OnInit, TemplateRef } from '@angular/core';
 import { Quote } from '../quote';
 import { HighlightDirective } from '../highlight.directive';
+import { TemplateLiteral, TemplateLiteralElement } from '@angular/compiler';
 
 
 
@@ -26,10 +27,13 @@ showDets(){
  this.show=!this.show
 }
 
-highest = Math.max.apply(Math, this.dispQuotes.map(function(o) { 
-  return o.upvote; }));
- 
- 
+
+
+
+
+
+ mostLiked!:any
+ notsoLiked!:any
 
   constructor() { }
 

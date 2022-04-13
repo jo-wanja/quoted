@@ -1,21 +1,43 @@
 <div class="container">
  <div *ngFor="let dispQuote of dispQuotes">
+   <div *ngIf="dispQuote.upvote===1; then mostLiked else notsoLiked "></div>
+    <ng-template #mostLiked >
+     
+      <span>
     <div class="card" >
       <div class="card-header">
         Quote submitted by {{dispQuote.submitter}}
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
-          <p>{{dispQuote.quote}}</p>
+          <p appHighlight>{{dispQuote.quote}}</p>
           <footer class="blockquote-footer">{{dispQuote.author}}</footer>
         </blockquote>
         <span (click)="showDets()">more</span>
           <app-quote-dets  [hidden]=(show) [quotedets]="dispQuote"></app-quote-dets>
         
       </div>
-   
     </div>
- 
+  </span>
+  </ng-template>
+  <ng-template #notsoLiked >
+    
+  <div class="card" >
+    <div class="card-header">
+      Quote submitted by {{dispQuote.submitter}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{dispQuote.quote}}</p>
+        <footer class="blockquote-footer">{{dispQuote.author}}</footer>
+      </blockquote>
+      <span (click)="showDets()">more</span>
+        <app-quote-dets  [hidden]=(show) [quotedets]="dispQuote"></app-quote-dets>
+      
+    </div>
+  </div>
+</ng-template>
+  
   </div>
   <app-quote-form (nwQuote)="addQuote($event)"></app-quote-form>
 </div>

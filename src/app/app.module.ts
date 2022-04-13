@@ -10,6 +10,7 @@ import { QuoteDetsComponent } from './quote-dets/quote-dets.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { HighlightDirective } from './highlight.directive';
 import { TimeCountPipe } from './time-count.pipe';
+import { TimerPipe } from './timer.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TimeCountPipe } from './time-count.pipe';
     QuoteFormComponent,
     HighlightDirective,
     TimeCountPipe,
+    TimerPipe,
 
   ],
   imports: [
